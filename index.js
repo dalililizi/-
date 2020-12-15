@@ -1,43 +1,6 @@
 
 Page({
-//没啥用，想尝试推送来着，没做出来
-  /**
-   * 页面的初始数据
-   */
 
-  /*sendNew(res){
-    var that = this
-    var time = util.formatTime(new Date());
-    wx.cloud.callFunction({
-      name:'getOpenId',
-      success(a){
-        console.log(a.result.openid)
-      }
-    }),
-    wx.requestSubscribeMessage({
-      tmplIds: ['FOpZ2IS3JxLdhvK7uyfNIA_sjXDdDR0rrOCNF28UjoQ'],
-
-      success(res){
-
-        date:{openid:this.e.result.openid}
-        wx.cloud.callFunction({
-          name:'1',
-          data:{
-            openid:'e.result.openid',
-            title1:'二手物品',
-            title2:'二手物品',
-            time:time
-          },
-          success(res){
-            console.log('成功',res);
-          },
-          fail(res){
-            console.log('失败',res);
-          }
-        })
-      }
-    })
-  },*/
   
   radioChange: function (e) {
     //保存报警规则到当前页面的数据
@@ -123,6 +86,44 @@ Page({
         disabled: true,
       })
     }
+  //没啥用，想尝试推送来着，没做出来
+  /**
+   * 页面的初始数据
+   */
+
+  /*sendNew(res){
+    var that = this
+    var time = util.formatTime(new Date());
+    wx.cloud.callFunction({
+      name:'getOpenId',
+      success(a){
+        console.log(a.result.openid)
+      }
+    }),
+    wx.requestSubscribeMessage({
+      tmplIds: ['FOpZ2IS3JxLdhvK7uyfNIA_sjXDdDR0rrOCNF28UjoQ'],
+
+      success(res){
+
+        date:{openid:this.e.result.openid}
+        wx.cloud.callFunction({
+          name:'1',
+          data:{
+            openid:'e.result.openid',
+            title1:'二手物品',
+            title2:'二手物品',
+            time:time
+          },
+          success(res){
+            console.log('成功',res);
+          },
+          fail(res){
+            console.log('失败',res);
+          }
+        })
+      }
+    })
+  },*/
   
 })
 
