@@ -1,4 +1,5 @@
 <!--index.wxml-->
-
+//小程序太丑了
+//就是个按钮，按下去会读取oneNET的数据，其实就是执行index.js里的send函数
 
 <button id="btn3" style="opacity: {{opacity}}" disabled="{{disabled}}" bindtap="send">检测</button>
