@@ -1,6 +1,6 @@
 
 Page({
-
+//没啥用，想尝试推送来着，没做出来
   /**
    * 页面的初始数据
    */
@@ -38,6 +38,7 @@ Page({
       }
     })
   },*/
+  
   radioChange: function (e) {
     //保存报警规则到当前页面的数据
     if (e.detail.value != "") {
@@ -50,11 +51,11 @@ Page({
 
   send: function () {
 
-    var APIkey = "ymRc026SzCBailmLqZBEKZJ6yZE=" //百度的AK, 此处要替换为你自己的APPKey
+    var APIkey = "ymRc026SzCBailmLqZBEKZJ6yZE=" //oneNET的api
     
-    //调用百度天气API
+    //读取oneNET上数据
     wx.request({
-      url: 'https://api.heclouds.com/devices/642915130/datapoints', //百度天气API
+      url: 'https://api.heclouds.com/devices/642915130/datapoints', 
       header: {
         "api-key": "ymRc026SzCBailmLqZBEKZJ6yZE="                     
         //换成自己的api-key
@@ -72,11 +73,11 @@ Page({
         // 利用正则字符串从onenet的返回数据中截出当前床上亮度及人的状况
         try {
           var light = res.data.data.datastreams[0].datapoints[0].value;
-          var people = res.data.data.datastreams[1].datapoints[0].value;
+          var people = res.data.data.datastreams[1].datapoints[0].value;//一定要仔细看数据名，卡在这个0上好久，最后才发现
         } catch (e) {
           throw new Error(e)
         }
-
+//判断人在不在和睡了没，light的值越大越暗
         if(people==1){
           if (light <1000) {
               
@@ -112,9 +113,9 @@ Page({
       }
     })
   },
-
+//按钮发挥作用
   change: function (e) {
-    //当有输入时激活发送按钮，无输入则禁用按钮
+    
 
       this.setData({
         threshold: 0,
